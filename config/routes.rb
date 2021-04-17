@@ -7,6 +7,17 @@ authenticate :user, lambda { |u| u.admin? } do
   mount Sidekiq::Web => '/sidekiq'
 
   namespace :madmin do
+    resources :users
+    resources :announcements
+    resources :notifications
+    namespace :active_storage do
+      resources :blobs
+    end
+    namespace :active_storage do
+      resources :attachments
+    end
+    resources :services
+    root to: "dashboard#show"
   end
 end
 
