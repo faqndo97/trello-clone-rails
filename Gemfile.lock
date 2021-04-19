@@ -107,6 +107,11 @@ GEM
     erubi (1.10.0)
     excon (0.80.1)
     execjs (2.7.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     faraday (1.4.0)
       faraday-excon (~> 1.0)
       faraday-net_http (~> 1.0)
@@ -375,6 +380,7 @@ DEPENDENCIES
   devise (~> 4.7, >= 4.7.1)
   devise-bootstrapped!
   devise_masquerade (~> 1.2)
+  factory_bot_rails
   font-awesome-sass (~> 5.13)
   friendly_id (~> 5.3)
   image_processing
