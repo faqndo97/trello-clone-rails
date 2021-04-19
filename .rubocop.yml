@@ -1,0 +1,79 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - 'db/**/*.rb'
+    - 'lib/tasks/auto_annotate_models.rake'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'bin/bundle'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/**/*.rb'
+    - 'spec/**/*'
+
+Metrics/AbcSize:
+  # The ABC size is a calculated magnitude, so this number can be an Integer or
+  # a Float.
+  Max: 20
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/ClassLength:
+  CountComments: false  # count full line comments?
+  Max: 200
+
+Metrics/ModuleLength:
+  CountComments: false  # count full line comments?
+  Max: 200
+
+# Avoid complex methods.
+Metrics/CyclomaticComplexity:
+  Max: 6
+
+Layout/LineLength:
+  Max: 120
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 24
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Max: 12
+
+Layout/FirstHashElementIndentation:
+  Enabled: false
+
+Layout/FirstArgumentIndentation:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: false
+
+RSpec/ContextWording:
+   Prefixes:
+     - when
+     - with
+     - without
+     - and

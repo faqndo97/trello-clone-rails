@@ -126,7 +126,9 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
+  # rubocop:disable Layout/LineLength
   # config.pepper = '7d470cc03f20a78e632228309c90241609a7b948f1e143a95bc49bc883b03083d30683b2cb15c6da5275589737300beaaa8d6d7a348cb85acb373cd6a5e9ffcb'
+  # rubocop:enable Layout/LineLength
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -274,11 +276,11 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   env_creds = Rails.application.credentials[Rails.env.to_sym] || {}
-    %i{ facebook twitter github }.each do |provider|
-      if options = env_creds[provider]
-        config.omniauth provider, options[:app_id], options[:app_secret], options.fetch(:options, {})
-      end
+  %i[facebook twitter github].each do |provider|
+    if (options = env_creds[provider])
+      config.omniauth provider, options[:app_id], options[:app_secret], options.fetch(:options, {})
     end
+  end
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
