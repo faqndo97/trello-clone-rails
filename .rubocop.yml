@@ -77,3 +77,6 @@ RSpec/ContextWording:
      - with
      - without
      - and
+
+RSpec/MultipleExpectations:
+  Enabled: false

@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Board, type: :model do
   it 'creates a valid board' do
     owner = FactoryBot.create(:user)
-    board = Board.new(name: 'Test', owner: owner)
+    board = described_class.new(name: 'Test', owner: owner)
 
     is_valid = board.save
 
@@ -15,7 +15,7 @@ RSpec.describe Board, type: :model do
   describe 'validations' do
     it 'creates a invalid record without name' do
       owner = FactoryBot.create(:user)
-      board = Board.new(owner: owner)
+      board = described_class.new(owner: owner)
 
       is_valid = board.save
 
@@ -24,7 +24,7 @@ RSpec.describe Board, type: :model do
     end
 
     it 'creates a invalid record without owner' do
-      board = Board.new(name: 'Test')
+      board = described_class.new(name: 'Test')
 
       is_valid = board.save
 
