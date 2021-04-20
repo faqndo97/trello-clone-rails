@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :list do
     name { 'Test List' }
-    postition { 0 }
+    position { 0 }
     association :board, factory: :board
   end
 end

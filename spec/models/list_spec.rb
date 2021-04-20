@@ -13,7 +13,7 @@ RSpec.describe List, type: :model do
   end
 
   describe 'validations' do
-    it 'create a invalid record without name' do
+    it 'create an invalid record without name' do
       board = FactoryBot.create(:board)
       list  = described_class.new(board: board)
 
@@ -23,7 +23,7 @@ RSpec.describe List, type: :model do
       expect(list.errors.full_messages).to include "Name can't be blank"
     end
 
-    it 'create a invalid record without board' do
+    it 'create an invalid record without board' do
       list = described_class.new(name: 'Test List')
 
       is_valid = list.save
