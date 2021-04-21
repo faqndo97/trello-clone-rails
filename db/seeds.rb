@@ -27,7 +27,7 @@ List.create!(name: 'In Progress', position: 2, board: board_nick)
 List.create!(name: 'Code Review', position: 3, board: board_nick)
 List.create!(name: 'Done', position: 4, board: board_nick)
 
-list_mark = List.create!(name: 'Store list', position: 0, board: user_mark)
+list_mark = List.create!(name: 'Store list', position: 0, board: board_mark)
 
 # Create Tickets
 Ticket.create!(title: 'Data Base', description: 'description', position: 0, list: list_nick)
