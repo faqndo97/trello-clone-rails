@@ -5,6 +5,14 @@ GIT
   specs:
     devise-bootstrapped (0.2.0)
 
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 5b88b36ac67db4c758934a0835a151dea6fb8e21
+  branch: master
+  specs:
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -384,6 +392,7 @@ DEPENDENCIES
   devise-bootstrapped!
   devise_masquerade (~> 1.2)
   factory_bot_rails
+  faker!
   font-awesome-sass (~> 5.13)
   friendly_id (~> 5.3)
   image_processing
