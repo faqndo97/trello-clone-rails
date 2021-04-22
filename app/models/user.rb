@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_person_name
 
+  has_many :boards, dependent: :destroy, foreign_key: 'owner_id', inverse_of: 'owner'
   has_many :notifications, as: :recipient, dependent: :destroy
   has_many :services, dependent: :destroy
 end
