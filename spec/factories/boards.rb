@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :board do
-    name { 'Test Board' }
+    name { 'TODO List' }
     association :owner, factory: :user
   end
 end
