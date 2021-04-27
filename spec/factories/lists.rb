@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :list do
-    name { 'Test List' }
+    name { %w[TODO IN_DESIGN WIP CODE_REVIEW QA DONE].sample }
     position { 0 }
     association :board, factory: :board
   end
