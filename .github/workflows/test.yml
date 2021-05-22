@@ -33,6 +33,8 @@ jobs:
         run: |
           cp config/database.yml.github-actions config/database.yml
           bundle exec rails db:create db:migrate
+      - name: setup-chromedriver
+        uses: nanasess/setup-chromedriver@v1.0.1
       - name: Run tests
         env:
           RAILS_ENV: test
