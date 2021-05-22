@@ -1,0 +1,12 @@
+<h1><%= @board.name %></h1>
+
+<ul>
+  <% @board.lists.each do |list|%>
+    <li><%= list.name %></li>
+    <ul>
+      <% list.tickets.each do |ticket|%>
+        <li><%= ticket.title %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<ul>
